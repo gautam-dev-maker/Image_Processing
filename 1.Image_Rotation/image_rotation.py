@@ -21,15 +21,15 @@ def floating_point(number):
     else :
         return number
 
-# def mat_Multi(angle,x,y,k):
-#     tangent=math.tan(angle/2)
-#     if k==0 or k==2:
-#         X=x-y*tangent
-#         Y=y
-#     else:
-#         X=x
-#         Y=x*math.sin(angle)+y
-#     return round(X),round(Y)
+def mat_Multi(angle,x,y,k):
+    tangent=math.tan(angle/2)
+    if k==0 or k==2:
+        X=x-y*tangent
+        Y=y
+    else:
+        X=x
+        Y=x*math.sin(angle)+y
+    return round(X),round(Y)
 
 def rot(image,angle):
     # Define the most occuring variables
@@ -37,13 +37,13 @@ def rot(image,angle):
     cosine=math.cos(angle)
     sine=math.sin(angle)
     
-    #image1=np.zeros_like(image)
+    image1=np.zeros_like(image)
 
     # Define the height and width of the new image that is to be formed
-    new_height = floating_point(abs(image.shape[0]*cosine)+abs(image.shape[1]*sine))
-    new_width  = floating_point(abs(image.shape[1]*cosine)+abs(image.shape[0]*sine))
+    # new_height = floating_point(abs(image.shape[0]*cosine)+abs(image.shape[1]*sine))
+    # new_width  = floating_point(abs(image.shape[1]*cosine)+abs(image.shape[0]*sine))
 
-    image1=np.zeros((new_width,new_height,image.shape[2]))
+    # image1=np.zeros((new_width,new_height,image.shape[2]))
 
     # Find the centre of the image about which we have to rotate the image
     centre_row   = round(((image.shape[0]+1)/2)-1)
