@@ -28,3 +28,23 @@ Applying 5X5 filters to do the following task
 |<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_box_blur.png">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_blur.png">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_sharpen.png">|
 |:---:|:---:|:---:|
 |Box Filter|Gaussian Filter|Sharpen|
+
+### 3. Edge Detection
+Applying Edge Detection in following sequence 
+1. Vertical edge detection
+2. Horizontal edge detection
+3. Sobel edge detection (right, left, top, bottom)
+4. Canny edge detection  
+
+|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/edge-detection1.png">|
+|:---:|
+|Input Image|
+
+**Output**
+|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_verical_edge.jpg">|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_horizontal_edge.jpg">|
+|:---:|:---:|
+|Vertical Edge Detection|Horizontal Edge Detection|
+|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_sobel.jpg">|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_canny.jpg">|
+|:---:|:---:|
+|Sobel Edge Detection|Canny Edge Detection|
+
