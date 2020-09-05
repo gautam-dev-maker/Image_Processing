@@ -21,10 +21,10 @@ gaussian_blurr=np.array([[1,  4,  6,  4, 1],
 
 box_blur=np.array([[1,1,1],
                    [1,1,1],
-                   [1,1,1]])
-file_name="test_blur.jpg"
+                   [1,1,1]])/9
+file_name="test_sharpen.png"
 im = np.array(Image.open(file_name))
-pil_img=Image.fromarray(convolve3d(im, gaussian_blurr))
-pil_img.save('result_blur.jpg')
+pil_img=Image.fromarray(convolve3d(im, box_blur))
+pil_img.save('result_box_blur.png')
 
 

@@ -14,13 +14,14 @@ def convolve3d(image, kernel):
     output[:,:,3]=image[:,:,3]
     return output
 
-Sharpen1=np.array([[-1, -1, -1, -1, -1],
-                   [-1,  2,  2,  2, -1],
-                   [-1,  2,  8,  2, -1],
-                   [-1,  2,  2,  2, -1],
-                   [-1, -1, -1, -1, -1]])
 
-Sharpen=np.array([[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1],[-1,-1,25,-1,-1],[-1,-1,-1,-1,-1],[-1,-1,-1,-1,-1]])/-25
+
+Sharpen=np.array([[-1,-1,-1,-1,-1],
+                  [-1,-1,-1,-1,-1],
+                  [-1,-1,25,-1,-1],
+                  [-1,-1,-1,-1,-1],
+                  [-1,-1,-1,-1,-1]])/-25
+                  
 file_name="test_sharpen.png"
 im = np.array(Image.open(file_name))
 im=convolve3d(im,Sharpen)
