@@ -37,6 +37,9 @@ Applying 5X5 filters to do the following task
 |Box Filter|Gaussian Filter|Sharpen|
 
 ### 3. Edge Detection
+
+Edge detection is an image processing technique for finding the boundaries of objects within images. It works by detecting discontinuities in brightness.
+
 Applying Edge Detection in following sequence 
 1. Vertical edge detection
 2. Horizontal edge detection
@@ -55,6 +58,7 @@ Applying Edge Detection in following sequence
 |Sobel Edge Detection|Canny Edge Detection|
 
 ### 4. Morphological Transformation
+Morphological transformations are some simple operations based on the image shape. It is normally performed on binary images. It needs two inputs, one is our original image, second one is called structuring element or kernel which decides the nature of operation. Two basic morphological operators are Erosion and Dilation.
 Applying dilation and erosion transformation to the image
 
 **Output**
