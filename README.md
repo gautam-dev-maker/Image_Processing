@@ -4,10 +4,14 @@ The following operations have been performed mainly using only Numpy and Pillow 
 
 ### 1. Image Rotation
 
-The image can be rotated by any angle bound or inbound.
+The image can be rotated by any angle bound or inbound.It involves finding the centre of the Matrix and Shifting along the centre using Rotation Matrix
+
+![Rotation Matrix](https://legacy.voteview.com/images/homework_1_1_18_2011.jpg)
+
 |<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/1.Image_Rotation/rotate.png">| 
 |:---:|
 |Input Image|
+
 
 **Output**
 |<img width="600" height="322" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/1.Image_Rotation/rotated_without_bound.png">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/1.Image_Rotation/rotated_with_bound.png">|
@@ -15,6 +19,9 @@ The image can be rotated by any angle bound or inbound.
 |No Bound|Bound|
 
 ### 2. Applying Kernels
+
+Convolution is a simple mathematical operation which is fundamental to many common image processing operators. Convolution provides a way of multiplying together two arrays of numbers, generally of different sizes, but of the same dimensionality, to produce a third array of numbers of the same dimensionality.Kernels form the Second Matrix which provides effects to the Image.
+![figure3](https://user-images.githubusercontent.com/35737777/68632479-95c61f80-04e6-11ea-80b2-2e86a4fcc258.jpg)
 
 Applying 5X5 filters to do the following task
 1. Blurring 
