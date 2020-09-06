@@ -31,11 +31,11 @@ y_direction_kernel=np.array([[-1,-2,-1],
                              [ 0, 0, 0],
                              [ 1, 2, 1]])
 
-file_name="edge-detection1.png"
+file_name="result_dilation.png"
 im = rgb2gray(np.array(Image.open(file_name)))
 im=convolve3d_grayscale(im,gaussian_blurr)
 im_x=convolve3d_grayscale(im,x_direction_kernel)
 im_y=convolve3d_grayscale(im,y_direction_kernel)
 im=np.hypot(im_x,im_y)  
 pil_img=Image.fromarray(im).convert('RGB')
-pil_img.save('result_sobel.jpg')
+pil_img.save('result_morphology.jpg')
