@@ -4,7 +4,9 @@ The following operations have been performed mainly using only Numpy and Pillow 
 
 ### 1. Image Rotation
 
-The image can be rotated by any angle bound or inbound.It involves finding the centre of the Matrix and Shifting along the centre using Rotation Matrix
+The image can be rotated by any angle bound or inbound.It involves finding the centre of the Matrix and Shifting along the centre using Rotation Matrix.There are two methods of rotating the image following above approach
+1. Using Pure Rotation Matrix
+2. [Using Shearing Rotation](https://datagenetics.com/blog/august32013/index.html)
 
 ![Rotation Matrix](https://legacy.voteview.com/images/homework_1_1_18_2011.jpg)
 
