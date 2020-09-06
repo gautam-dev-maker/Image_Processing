@@ -34,7 +34,7 @@ Applying 5X5 filters to do the following task
 **Output**
 |<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_box_blur.png">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_blur.png">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/2.Applying_Kernels/result_sharpen.png">|
 |:---:|:---:|:---:|
-|Box Filter|Gaussian Filter|Sharpen|
+|Box Blur|Gaussian Blur|Sharpen|
 
 ### 3. Edge Detection
 
