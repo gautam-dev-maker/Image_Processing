@@ -72,3 +72,11 @@ Applying dilation and erosion transformation to the image
 |:---:|:---:|:---:|:---:|
 |Input-Image|Dilation|Erosion|Edge-Detection|
 
+### 5. Masking
+Masking is an image processing method in which we define a small 'image piece' and use it to modify a larger image. Masking is the process that is underneath many types of image processing, including edge detection, motion detection, and noise reduction.
+To show only blue ball a mask has been applied to the following input image
+|<img width="600" height="396" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/5.Masking/mask.jpeg">|<img width="600" height="396" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/5.Masking/masked.jpeg">|
+|:---:|:---:|
+|Input Image|Masked Image(output)|
+
+
