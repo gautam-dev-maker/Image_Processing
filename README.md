@@ -59,7 +59,7 @@ Applying Edge Detection in following sequence
 **Output**
 |<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_verical_edge.jpg">|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_horizontal_edge.jpg">|
 |:---:|:---:|
-|Vertical Edge Detection|Horizontal Edge Detection|
+|Horizontal Edge Detection|Vertical Edge Detection|
 |<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_sobel.jpg">|<img width="602" height="452" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/3.Edge_Detection/result_canny.jpg">|
 |Sobel Edge Detection|Canny Edge Detection|
 
