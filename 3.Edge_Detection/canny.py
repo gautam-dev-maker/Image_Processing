@@ -69,9 +69,9 @@ def threshold(img, weak,strong,lowThresholdRatio=0.05, highThresholdRatio=0.09):
     weak_i, weak_j = np.where((img <= highThreshold) & (img >= lowThreshold))
     res[strong_i, strong_j] = strong
     res[weak_i, weak_j] = weak
-    return res
+    return (res, weak, strong)
 
-def hysteresis(img, weak, strong):
+def hysteresis(img, weak, strong=255):
     M, N = img.shape  
     for i in range(1, M-1):
         for j in range(1, N-1):
@@ -123,9 +123,9 @@ im=non_max_suppression(im,theta)
 # applying double threshold
 weak=75
 strong=255
-im=threshold(im,weak,strong,0.05,0.15)
+canny_output=threshold(im,weak,strong,0.05,0.09)
 # applying hysteresis
-im=hysteresis(im,weak,strong)
+im=hysteresis(canny_output[0],canny_output[1],canny_output[2])
 
 
 pil_img=Image.fromarray(im).convert('RGB')

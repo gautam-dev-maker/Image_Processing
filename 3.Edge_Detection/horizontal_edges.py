@@ -6,6 +6,8 @@ def rgb2gray(rgb):
     gray = 0.2989 * r + 0.5870 * g + 0.1140 * b
     return gray
 
+
+
 def convolve3d_grayscale(image, kernel):
     output = np.zeros_like(image)
     image_padded = np.zeros((image.shape[0]+kernel.shape[0]-1,image.shape[1] + kernel.shape[1]-1))
@@ -33,6 +35,7 @@ y_direction_kernel=np.array([[-1,-2,-1],
 
 file_name="edge-detection1.png"
 im = rgb2gray(np.array(Image.open(file_name)))
+intensity = [[sum(im[x, y]) / 3 for y in range(im.shape[1])] for x in range(im.shape[0])]
 im=convolve3d_grayscale(im,gaussian_blurr)
 im=convolve3d_grayscale(im,x_direction_kernel)
 pil_img=Image.fromarray(im).convert('RGB')
