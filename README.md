@@ -79,4 +79,9 @@ To show only blue ball a mask has been applied to the following input image
 |:---:|:---:|
 |Input Image|Masked Image(output)|
 
+### 6. ROI
+A region of interest (ROI) is a portion of an image that you want to filter or perform some other operation on. You define an ROI by creating a binary mask, which is a binary image that is the same size as the image you want to process with pixels that define the ROI set to 1 and all other pixels set to 0.
+<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/6.ROI/roi.jpeg">|<img width="640" height="450" src="https://github.com/gautam-dev-maker/Image_Processing/blob/master/6.ROI/moved.jpeg">
+|:---:|:---:|
+|Input Image|Output Image|
 
