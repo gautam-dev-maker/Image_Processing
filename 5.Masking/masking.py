@@ -2,18 +2,28 @@ import cv2
 import numpy as np
 from PIL import Image
 
+def RGB2BGR(image):
+    image1=np.zeros_like(image)
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            image1[i][j][0]=image[i][j][2]
+            image1[i][j][1]=image[i][j][1]
+            image1[i][j][2]=image[i][j][0]
+    return image1
+
 def masking_image(image,lower,upper):
-    image = cv2.cvtColor(image.astype(np.uint8), cv2.COLOR_BGR2HSV)
     image_copy=image
-    for x in range(image.shape[0]):
-        for y in range(image.shape[1]):
-            for z in range(image.shape[2]):
-                if image[x,y,z]>=lower[z] and image[x,y,z]<=upper[z]:
-                    image[x,y,z]=360
-                else:
-                    image[x,y,z]=0
-    image=~(image_copy ^ image)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    mask=np.zeros((image.shape[0],image.shape[1],image.shape[2]),dtype=np.uint8)
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            if image[i][j][0] >= lower[0] and image[i][j][1] >= lower[1] and image[i][j][2] >= lower[2] and image[i][j][0] <= upper[0] and image[i][j][1] <= upper[1] and image[i][j][2] <= upper[2]:
+                    mask[i][j][0] = image[i][j][0]
+                    mask[i][j][1] = image[i][j][1]
+                    mask[i][j][2] = image[i][j][2]
+    image=np.bitwise_and(mask,image)
     image= cv2.cvtColor(image, cv2.COLOR_HSV2RGB)
+    
     return image
 
 
@@ -39,6 +49,7 @@ file_name="mask.jpeg"
 im = np.array(Image.open(file_name))
 lower_blue = np.array([94,130,38])
 upper_blue = np.array([179,255,255])
+im=RGB2BGR(im)
 im=masking_image(convolve3d(im,gaussian_blurr),lower_blue,upper_blue)
 pil_img=Image.fromarray(im.astype(np.uint8))
 pil_img.save('masked.jpeg')

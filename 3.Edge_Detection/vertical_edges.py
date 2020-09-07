@@ -6,21 +6,35 @@ def rgb2gray(rgb):
     gray = 0.2989 * r + 0.5870 * g + 0.1140 * b
     return gray
 
-def  vertical_edge_detector(image):
-    output=np.zeros_like(image)
-    image_padded=np.zeros((image.shape[0],image.shape[1]+2))
-    image_padded[:,1:-1]=image
-    image_padded[:,0]=image[:,0]
-    image_padded[:,-1]=image[:,-1]
-    for i in range(image.shape[0]):
-        for j in range(image.shape[1]):
-                resultant=image_padded[i,j+2]-image_padded[i,j]
-                resultant=round((resultant+255)/2)
-                output[i,j]=resultant
+def convolve3d_grayscale(image, kernel):
+    output = np.zeros_like(image)
+    image_padded = np.zeros((image.shape[0]+kernel.shape[0]-1,image.shape[1] + kernel.shape[1]-1))
+    image_padded[kernel.shape[0]-2:-1:,kernel.shape[1]-2:-1:] = image
+    image_padded[0,0]=image[0,0]
+    image_padded[-1,-1]=image[-1,-1]
+    for x in range(image.shape[1]):
+        for y in range(image.shape[0]):
+            output[y,x]=(kernel * image_padded[y: y+kernel.shape[0], x: x+kernel.shape[1]]).sum()
     return output
+
+gaussian_blurr=np.array([[1,  4,  6,  4, 1],
+                         [4, 16, 24, 16, 4],
+                         [6, 24, 36, 24, 6],
+                         [4, 16, 24, 16, 4],
+                         [1,  4,  6,  4, 1]])/256
+
+x_direction_kernel=np.array([[-1,0,1],
+                             [-2,0,2],
+                             [-1,0,1]])
+
+y_direction_kernel=np.array([[-1,-2,-1],
+                             [ 0, 0, 0],
+                             [ 1, 2, 1]])
 
 file_name="edge-detection1.png"
 im = np.array(Image.open(file_name))
 im=rgb2gray(im)
-pil_img=Image.fromarray(vertical_edge_detector(im)).convert('RGB')
+im=convolve3d_grayscale(im,gaussian_blurr)
+im=convolve3d_grayscale(im,y_direction_kernel)
+pil_img=Image.fromarray(im).convert('RGB')
 pil_img.save('result_verical_edge.jpg')
